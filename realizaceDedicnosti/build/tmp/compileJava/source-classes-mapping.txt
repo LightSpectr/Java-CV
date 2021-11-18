@@ -1,0 +1,4 @@
+realizaceDedicnosti/generateRandom.java
+ realizaceDedicnosti.generateRandom
+realizaceDedicnosti/Main.java
+ realizaceDedicnosti.Main

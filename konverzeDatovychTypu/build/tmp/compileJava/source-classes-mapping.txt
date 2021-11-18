@@ -1,0 +1,6 @@
+konverzeDatovychTypu/Trojuhelnik.java
+ konverzeDatovychTypu.Trojuhelnik
+konverzeDatovychTypu/Main.java
+ konverzeDatovychTypu.Main
+konverzeDatovychTypu/Znaky.java
+ konverzeDatovychTypu.Znaky
