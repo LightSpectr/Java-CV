@@ -18,7 +18,12 @@ public class Main {
         deklarace_promennych();
         TiskCislo(2048);
         MinMax();
+        
+       
     }
+    
+    
+
     
     
     static void deklarace_promennych(){

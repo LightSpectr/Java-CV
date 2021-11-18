@@ -20,9 +20,13 @@ public class Main {
         Sachovnice chess = new Sachovnice((byte)10, (byte)10, (byte)1, (byte)1);
         Hra_Sachovnice game_chess = new Hra_Sachovnice(chess);
         Sachovnice chess2 = (Sachovnice)chess.clone();
-        chess.move(SMER_POHYBU.DOWN);
-        System.out.println(chess);
-         System.out.println(chess2);
+        while(true){
+            switch(game_chess.nacti_direction()){
+                case 'w':
+                
+                
+            }
+        }
  
         
     }

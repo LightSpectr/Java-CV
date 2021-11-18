@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 package cv2;
-
+import java.util.Scanner;
 /**
  *
  * @author makedo01
  */
 public class Hra_Sachovnice {
     public Sachovnice hra = null;
+    private Scanner scr;
+    
     
     public Hra_Sachovnice(Sachovnice hra){
         if(hra.test() == true){
@@ -19,13 +21,14 @@ public class Hra_Sachovnice {
         else{
             this.hra = null;
         }
+        scr = new Scanner(System.in);
     }
     
     public char nacti_direction(){
          
+    
         
-        
-    return 'd';     
+        return this.scr.next(".").charAt(0);   
     }
     
     public void tisk(){
