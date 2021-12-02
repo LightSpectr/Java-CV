@@ -18,17 +18,70 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //FileInputStream in = null;
-        //FileOutputStream out = null;
+       
+        //firstTask();
+        try{
+            System.out.println(IOFileTool.pocetznaku_file("TextFile.txt"));
+        }
+        catch(FileNotFoundException e){
+             System.out.println("no file");
+        
+        }
+        catch(IOException e){
+            System.out.println("IO error");
+        }
+        
+        try{
+            IOFileTool.copy_file("TextFile1.txt","TextFile2.txt");
+        }
+        catch(FileNotFoundException e){
+             System.out.println("no file");
+        
+        }
+        catch(IOException e){
+            System.out.println("IO error");
+        }
+        
+    }
+    
+    
+    public static byte[] longToBytes(long x) {
+        ByteBuffer buffer = ByteBuffer.allocate(Long.BYTES);
+        buffer.putLong(x);
+        return buffer.array();
+    }
+
+    public static long bytesToLong(byte[] bytes) {
+        ByteBuffer buffer = ByteBuffer.allocate(Long.BYTES);
+        buffer.put(bytes);
+        buffer.flip();//need flip 
+        return buffer.getLong();
+    }
+    
+    public static byte[] intToBytes(int x) {
+        ByteBuffer buffer = ByteBuffer.allocate(Integer.BYTES);
+        buffer.putInt(x);
+        return buffer.array();
+    }
+
+    public static int bytesToInt(byte[] bytes) {
+        ByteBuffer buffer = ByteBuffer.allocate(Integer.BYTES);
+        buffer.put(bytes);
+        buffer.flip();//need flip 
+        return buffer.getInt();
+    }
+    
+    
+    public static void firstTask(){
         int a  = 65;
         long b = 66;
         try{File f = new File("filename.txt");
-         Scanner myReader = new Scanner(f);
-      int i = 0;
-       while (myReader.hasNext()) {
-        i++;
-        }
-        System.out.println(i);
+            Scanner myReader = new Scanner(f);
+            int i = 0;
+            while (myReader.hasNext()) {
+                i++;
+            }
+            System.out.println(i);
         }
         catch(FileNotFoundException e){
             System.out.println("no file");
@@ -86,37 +139,5 @@ public class Main {
         catch(IOException e){
             System.out.println("IO error");
         }
-       
-       
-       
-        
-        // TODO code application logic here
-    }
-    
-    
-    public static byte[] longToBytes(long x) {
-        ByteBuffer buffer = ByteBuffer.allocate(Long.BYTES);
-        buffer.putLong(x);
-        return buffer.array();
-    }
-
-    public static long bytesToLong(byte[] bytes) {
-        ByteBuffer buffer = ByteBuffer.allocate(Long.BYTES);
-        buffer.put(bytes);
-        buffer.flip();//need flip 
-        return buffer.getLong();
-    }
-    
-    public static byte[] intToBytes(int x) {
-        ByteBuffer buffer = ByteBuffer.allocate(Integer.BYTES);
-        buffer.putInt(x);
-        return buffer.array();
-    }
-
-    public static int bytesToInt(byte[] bytes) {
-        ByteBuffer buffer = ByteBuffer.allocate(Integer.BYTES);
-        buffer.put(bytes);
-        buffer.flip();//need flip 
-        return buffer.getInt();
     }
 }
