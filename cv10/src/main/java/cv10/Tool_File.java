@@ -21,8 +21,6 @@ public class Tool_File {
             System.out.println("Executable: " + f.canExecute());
             System.out.println("Readable: " + f.canRead());
             System.out.println("Writable: " + f.canWrite());
-            System.out.println("Total space: " + f.getTotalSpace());
-            System.out.println("Usable space: " + f.getUsableSpace());
             System.out.println("Directory: " + f.isDirectory());
             System.out.println("File: " + f.isFile());
             System.out.println("Hidden: " + f.isHidden());
@@ -30,14 +28,104 @@ public class Tool_File {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyy HH:mm:ss"); 
             LocalDateTime t = LocalDateTime.ofInstant(instant, ZoneOffset.UTC);
             System.out.println("Last modified: " + dtf.format(t));
-            System.out.println("Length: " + f.length());
         }
         
     }
     
-    public static void getContent(File f){
-        
+    public static void getDirContentInfo(File f){
+        if(f.isDirectory() == true){
+            File[] listOfFiles = f.listFiles();
+            for (int i = 0; i < listOfFiles.length; i++){
+                if (listOfFiles[i].isFile()) {
+                    System.out.println(listOfFiles[i].getName() + " - File");
+                } else if (listOfFiles[i].isDirectory()) {
+                    System.out.println(listOfFiles[i].getName() + " - Dir");
+                }
+            }
+        }
+        else{
+            System.out.println("Is not a directory.");
+        }
       
+    }
+    
+    public static void getDirsFiles(File f){
+        if(f.isDirectory() == true){
+            File[] listOfDirFiles = f.listFiles();
+            System.out.println("Directories:");
+            for (int i = 0; i < listOfDirFiles.length; i++){
+               if (listOfDirFiles[i].isDirectory()) {
+                    System.out.println("\t"+listOfDirFiles[i].getName());
+                }
+            }
+            System.out.println("Files:");
+            for (int i = 0; i < listOfDirFiles.length; i++){
+               if (listOfDirFiles[i].isFile()) {
+                    System.out.println("\t"+listOfDirFiles[i].getName());
+                }
+            }
+        }
+        else{
+            System.out.println("Is not a directory.");
+        }
+    }
+    
+    public static File[] getFiles(File f){
+         if(f.isDirectory() == true){
+            File[] listOfDirFiles = f.listFiles();
+            int filecount = 0;
+            for (int i = 0; i < listOfDirFiles.length; i++){
+               if (listOfDirFiles[i].isFile()) {
+                    filecount++;
+                }
+               
+            }
+            File[] listOfFiles = new File[filecount];
+            int index = 0 ;
+            for (int i = 0; i < listOfDirFiles.length; i++){
+               if (listOfDirFiles[i].isFile()) {
+                   listOfFiles[index] = listOfDirFiles[i];
+                   index++;
+                }
+               
+            }
+            return listOfFiles;
+            
+        }
+        else{
+            System.out.println("Is not a directory.");
+            return null;
+        }
+        
+    }
+    
+    public static File[] getDirs(File f){
+         if(f.isDirectory() == true){
+            File[] listOfDirFiles = f.listFiles();
+            int filecount = 0;
+            for (int i = 0; i < listOfDirFiles.length; i++){
+               if (listOfDirFiles[i].isDirectory()) {
+                    filecount++;
+                }
+               
+            }
+            File[] listOfFiles = new File[filecount];
+            int index = 0 ;
+            for (int i = 0; i < listOfDirFiles.length; i++){
+               if (listOfDirFiles[i].isDirectory()) {
+                   listOfFiles[index] = listOfDirFiles[i];
+                   index++;
+                }
+               
+            }
+            return listOfFiles;
+            
+        }
+        else{
+            System.out.println("Is not a directory.");
+            return null;
+        }
+        
     }
     
 }

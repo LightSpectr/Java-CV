@@ -15,8 +15,13 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        System.out.println("deklarace promennych");
         deklarace_promennych();
+        System.out.println();
+        System.out.println("TiskCislo");
         TiskCislo(2048);
+        System.out.println();
+        System.out.println("MinMax");
         MinMax();
         
        
@@ -50,26 +55,26 @@ public class Main {
     static void MinMax(){
         
         //TODO
-        System.out.println("int - Min:" + Integer.MIN_VALUE + "; Max:" +
-                Integer.MAX_VALUE + "; Size:" + Integer.SIZE);
+        System.out.println("int - Min: " + Integer.MIN_VALUE + "; Max: " +
+                Integer.MAX_VALUE + "; Size: " + Integer.SIZE);
         
-        System.out.println("char - Min:" + Character.MIN_VALUE + "; Max:" +
-                Character.MAX_VALUE + "; Size:" + Character.SIZE);
+        System.out.println("char - Min: " + Character.MIN_VALUE + "; Max: " +
+                Character.MAX_VALUE + "; Size: " + Character.SIZE);
         
-        System.out.println("float - Min:" + Float.MIN_VALUE + "; Max:" +
-                Float.MAX_VALUE + "; Size:" + Float.SIZE);
+        System.out.println("float - Min: " + Float.MIN_VALUE + "; Max: " +
+                Float.MAX_VALUE + "; Size: " + Float.SIZE);
         
-        System.out.println("double - Min:" + Double.MIN_VALUE + "; Max:" +
-                Double.MAX_VALUE + "; Size:" + Double.SIZE);
+        System.out.println("double - Min: " + Double.MIN_VALUE + "; Max:" +
+                Double.MAX_VALUE + "; Size: " + Double.SIZE);
         
-        System.out.println("byte - Min:" + Byte.MIN_VALUE + "; Max:" +
-                Byte.MAX_VALUE + "; Size:" + Byte.SIZE);
+        System.out.println("byte - Min: " + Byte.MIN_VALUE + "; Max: " +
+                Byte.MAX_VALUE + "; Size: " + Byte.SIZE);
          
-        System.out.println("long - Min:" + Long.MIN_VALUE + "; Max:" +
-                Long.MAX_VALUE + "; Size:" + Long.SIZE);
+        System.out.println("long - Min: " + Long.MIN_VALUE + "; Max: " +
+                Long.MAX_VALUE + "; Size: " + Long.SIZE);
           
-        System.out.println("short - Min:" + Short.MIN_VALUE + "; Max:" +
-                Short.MAX_VALUE + "; Size:" + Short.SIZE);
+        System.out.println("short - Min: " + Short.MIN_VALUE + "; Max: " +
+                Short.MAX_VALUE + "; Size: " + Short.SIZE);
         
     }
 }
