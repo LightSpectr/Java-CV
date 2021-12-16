@@ -5,6 +5,8 @@
  */
 package cv1;
 
+import java.util.Scanner;
+import java.util.InputMismatchException;
 /**
  *
  * @author makedo01
@@ -17,12 +19,35 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("deklarace promennych");
         deklarace_promennych();
-        System.out.println();
+        System.out.println("---------------------------");
         System.out.println("TiskCislo");
         TiskCislo(2048);
-        System.out.println();
+        System.out.println("---------------------------");
         System.out.println("MinMax");
         MinMax();
+        try{
+            Scanner scan = new Scanner(System.in);
+        
+            System.out.println("---------------------------");
+            System.out.println(VstupDat.ReadChar(scan));
+            System.out.println("---------------------------");
+            System.out.println(VstupDat.ReadInteger(scan));
+            System.out.println("---------------------------");
+            System.out.println(VstupDat.ReadFloat(scan));
+            System.out.println("---------------------------");
+            System.out.println(VstupDat.ReadDouble(scan));
+             System.out.println("---------------------------");
+            System.out.println(VstupDat.ReadByte(scan));
+             System.out.println("---------------------------");
+            System.out.println(VstupDat.ReadLong(scan));
+             System.out.println("---------------------------");
+            System.out.println(VstupDat.ReadBool(scan));
+             System.out.println("---------------------------");
+            System.out.println(VstupDat.ReadShort (scan));
+            
+        }catch(InputMismatchException e){
+            System.out.println("Wrong format");
+        }
         
        
     }
@@ -32,7 +57,7 @@ public class Main {
     
     
     static void deklarace_promennych(){
-        int i = 0;
+        int i = 555;
         char c = 'c';
         float f = 1.2f;
         double d = 2.1;
