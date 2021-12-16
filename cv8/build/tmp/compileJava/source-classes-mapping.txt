@@ -1,3 +1,5 @@
+cv8/Osoba.java
+ cv8.Osoba
 cv8/Datum.java
  cv8.Datum
 cv8/IOFileTool.java

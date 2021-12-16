@@ -19,28 +19,40 @@ public class Main {
      */
     public static void main(String[] args) {
        
-        //firstTask();
+        firstTask();
         try{
+            System.out.println("----------------------------------");
             System.out.println(IOFileTool.pocetznaku_file("TextFile.txt"));
-        }
-        catch(FileNotFoundException e){
-             System.out.println("no file");
-        
-        }
-        catch(IOException e){
-            System.out.println("IO error");
-        }
-        
-        try{
             IOFileTool.copy_file("TextFile1.txt","TextFile2.txt");
         }
         catch(FileNotFoundException e){
-             System.out.println("no file");
+            System.out.println("no file");
         
         }
         catch(IOException e){
             System.out.println("IO error");
         }
+           
+        try{
+            System.out.println("----------------------------------");
+            Osoba osoba = new Osoba("Sample", "Name", 22, 8, 1996);
+        
+            IOFileTool.osoba_serializace(osoba, "osoba.bin");
+            Osoba osoba2 = IOFileTool.osoba_deserializace("osoba.bin");
+            System.out.println(osoba2);
+            Datum d = new Datum(10, 6, 2007);
+            IOFileTool.write_datum_filebin(d, "datum.bin");
+            Datum d2 = IOFileTool.read_datum_filebin("datum.bin");
+            System.out.println("----------------------------------");
+            System.out.println(d2);
+        }catch(IOException e){
+            System.out.println("IO error");
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
+        
+        
         
     }
     
@@ -54,7 +66,7 @@ public class Main {
     public static long bytesToLong(byte[] bytes) {
         ByteBuffer buffer = ByteBuffer.allocate(Long.BYTES);
         buffer.put(bytes);
-        buffer.flip();//need flip 
+        buffer.flip();
         return buffer.getLong();
     }
     
@@ -67,7 +79,7 @@ public class Main {
     public static int bytesToInt(byte[] bytes) {
         ByteBuffer buffer = ByteBuffer.allocate(Integer.BYTES);
         buffer.put(bytes);
-        buffer.flip();//need flip 
+        buffer.flip();
         return buffer.getInt();
     }
     
@@ -75,18 +87,7 @@ public class Main {
     public static void firstTask(){
         int a  = 65;
         long b = 66;
-        try{File f = new File("filename.txt");
-            Scanner myReader = new Scanner(f);
-            int i = 0;
-            while (myReader.hasNext()) {
-                i++;
-            }
-            System.out.println(i);
-        }
-        catch(FileNotFoundException e){
-            System.out.println("no file");
-        }
-        
+       
         try(FileOutputStream output = new FileOutputStream("myFile.txt")){
             output.write(intToBytes(a));
             output.write(longToBytes(b));

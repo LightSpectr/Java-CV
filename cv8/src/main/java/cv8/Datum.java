@@ -5,16 +5,18 @@
  */
 package cv8;
 
+import java.io.Serializable;
+
 /**
  *
  * @author makedo01
  */
-public class Datum {
+public class Datum  implements Serializable{
     private int den;
     private int mesic;
     private int rok;
     
-    private Datum(int den, int mesic, int rok) throws Exception {
+    public Datum(int den, int mesic, int rok) throws Exception {
         if (den > 1 || den < 31){
              this.den = den;
         }
@@ -37,7 +39,7 @@ public class Datum {
     }
     
     public String toString() {
-      return Integer.toString(den)+'.'+Integer.toString(mesic)+'.'+
+      return Integer.toString(den)+'.'+Integer.toString(mesic)+
               '.'+Integer.toString(rok);
    }
 }
