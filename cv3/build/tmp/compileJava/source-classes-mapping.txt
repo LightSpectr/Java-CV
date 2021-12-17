@@ -1,0 +1,6 @@
+cv3/MatematickeFunkce.java
+ cv3.Funkce
+ cv3.Funkce_Kvadraticka
+ cv3.Funkce_Primka
+cv3/Main.java
+ cv3.Main
