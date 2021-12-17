@@ -1,0 +1,8 @@
+cvicenipet/primka.java
+ cvicenipet.primka
+cvicenipet/Rozseknuti.java
+ cvicenipet.Rozseknuti
+cvicenipet/rovnice.java
+ cvicenipet.rovnice
+cvicenipet/Main.java
+ cvicenipet.Main

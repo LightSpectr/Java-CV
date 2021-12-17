@@ -21,5 +21,11 @@ public class generateRandom{
     public void regen(){
         this.rand_dub = rand.nextDouble();
         this.rand_int = rand.nextInt(10);
+        
+    }
+    public int  getGenNum(int i ){
+       
+        return rand.nextInt(i);
+        
     }
 }
