@@ -21,21 +21,21 @@ public class Main {
         
         System.out.println("1a)");
         System.out.println(pokus.getTest());
-        String[] separated = pokus.getTest().split("@", 5);
+        String[] separated = pokus.getTest().split("@");
         for(String b  : separated)
             System.out.println(b);
         
         System.out.println("1b)");
         Rozseknuti pokus1 = new Rozseknuti("123;4567;89;123;456;789;0123;4567789");
         System.out.println(pokus1.getTest());
-        String[] separated1 = pokus1.getTest().split(";", 8);
+        String[] separated1 = pokus1.getTest().split(";");
         for(String c  : separated1)
             System.out.println(c);
         
         System.out.println("1c)");
         Rozseknuti pokus2 = new Rozseknuti("-152;-25;8999");
         System.out.println(pokus2.getTest());
-        String[] separated2 = pokus2.getTest().split(";", 3);
+        String[] separated2 = pokus2.getTest().split(";");
         for(String d  : separated2)
             System.out.println(d);
         
