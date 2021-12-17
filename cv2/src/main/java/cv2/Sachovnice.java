@@ -10,10 +10,10 @@ package cv2;
  * @author makedo01
  */
 public class Sachovnice {
-    public byte size_x;
-    public byte size_y;
-    public byte actual_x;
-    public byte actual_y;
+    private byte size_x;
+    private byte size_y;
+    private byte actual_x;
+    private byte actual_y;
     
     public Sachovnice(byte size_x, byte size_y, byte actual_x,
             byte actual_y){
@@ -66,13 +66,13 @@ public class Sachovnice {
               val = this.can_up();
               break;
             case DOWN:
-              val = this.can_up();
+              val = this.can_down();
               break;
             case LEFT:
-              val = this.can_up();
+              val = this.can_left();
               break;
             case RIGHT:
-              val = this.can_up();
+              val = this.can_right();
               break;
             default:
                 val = false;

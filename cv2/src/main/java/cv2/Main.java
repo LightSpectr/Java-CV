@@ -26,13 +26,40 @@ public class Main {
         Sachovnice chess_board = new Sachovnice((byte)10, (byte)10, (byte)1, (byte)1);
         Hra_Sachovnice game_chess = new Hra_Sachovnice(chess_board);
         Sachovnice chess_board2 = (Sachovnice)chess_board.clone();
-        while(true){
-            switch(game_chess.nacti_direction()){
-                case 'w':
+        char key;
+        if(game_chess.hra.test()){
+            game_chess.tisk();
+            while((key=game_chess.nacti_direction())!='k'){
+                switch(key){
+                    case 'w':
+                        if(game_chess.hra.can_move(SMER_POHYBU.UP)){
+                            game_chess.hra.move(SMER_POHYBU.UP);
+                        }
+                        break;
+                    case 's':
+                        if(game_chess.hra.can_move(SMER_POHYBU.DOWN)){
+                            game_chess.hra.move(SMER_POHYBU.DOWN);
+                        }
+                        break;
+                    case 'a':
+                        if(game_chess.hra.can_move(SMER_POHYBU.LEFT)){
+                            game_chess.hra.move(SMER_POHYBU.LEFT);
+                        }
+                        break;
+                    case 'd':
+                        if(game_chess.hra.can_move(SMER_POHYBU.RIGHT)){
+                            game_chess.hra.move(SMER_POHYBU.RIGHT);
+                        }
+                        break;
                 
-                
+                }
+            game_chess.tisk();
             }
+        }else{
+            System.out.println("test failed");
+       
         }
+        
  
         
     }
