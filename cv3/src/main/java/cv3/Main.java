@@ -22,6 +22,9 @@ public class Main {
         System.out.println(f2.calc_y(4));
         System.out.println(f2.diskriminant());
         System.out.println(f2.pocet_korenu());
+        
+        generateRandom random = new generateRandom();
+        random.ShowValues();
     }
     
 }
